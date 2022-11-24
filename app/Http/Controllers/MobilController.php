@@ -30,6 +30,7 @@ class MobilController extends Controller
                 'warna' => $request->input('warna'),
                 'harga' => $request->input('harga'),
                 'class' => 'Mobil',
+                'stok' => $request->input('stok'),
                 'detail' => [
                     'mesin' => $request->input('mesin'),
                     'kapasitas_penumpang' => $request->input('kapasitas_penumpang'),
@@ -40,12 +41,14 @@ class MobilController extends Controller
             $add_mobil = $this->mobilServices->createMobilData($data);
 
             BaseResponse::setStatus(201);
-            return BaseResponse::make($add_mobil);
         }
         catch (\Exception $E){
             BaseResponse::setStatus(400);
             return BaseResponse::makeError($E->getMessage());
         }
+
+        return BaseResponse::make($add_mobil);
+
     }
 
 }

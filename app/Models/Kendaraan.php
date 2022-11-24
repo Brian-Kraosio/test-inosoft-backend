@@ -10,6 +10,6 @@ class Kendaraan extends Eloquent
     protected $collection = 'kendaraan';
 
     protected $fillable = [
-        'tahun_keluaran', 'warna', 'harga', 'tipe', 'mesin', 'tipe_suspensi', 'tipe_transmisi', 'kapasitas_penumpang', 'detail'
+        'tahun_keluaran', 'warna', 'harga', 'tipe', 'mesin', 'tipe_suspensi', 'tipe_transmisi', 'kapasitas_penumpang', 'detail', 'stok'
     ];
 }

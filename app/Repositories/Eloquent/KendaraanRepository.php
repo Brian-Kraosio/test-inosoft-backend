@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repositories\Eloquent;
 
-use App\Classes\BaseResponse\BaseResponse;
 use App\Models\Kendaraan;
 use App\Repositories\KendaraanRepositoryI;
 
@@ -11,14 +12,12 @@ class KendaraanRepository implements KendaraanRepositoryI
 
     public function getAllData()
     {
-        $data = Kendaraan::all();
-
-        return BaseResponse::make($data);
+        return Kendaraan::all();
     }
 
-    public function getById($id)
+    public function getDataById($id)
     {
-        // TODO: Implement getById() method.
+        return Kendaraan::findOrFail($id);
     }
 
     public function deleteAll()
@@ -29,6 +28,13 @@ class KendaraanRepository implements KendaraanRepositoryI
     public function deleteById($id)
     {
         // TODO: Implement deleteById() method.
+    }
+
+    public function create(array $data)
+    {        $add_kendaraan = Kendaraan::create($data);
+
+        return $add_kendaraan;
+
     }
 }
 

@@ -1,12 +1,18 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Services\Eloquent;
 
 use App\Models\Kendaraan;
+use App\Repositories\Eloquent\KendaraanRepository;
 use App\Services\MobilServicesI;
+use GuzzleHttp\Exception\InvalidArgumentException;
+use Illuminate\Support\Facades\Validator;
 
-class MobilServices implements MobilServicesI
+
+class MobilServices extends KendaraanRepository implements MobilServicesI
 {
+
+
 
     public function getAllMobil($class)
     {
@@ -15,8 +21,21 @@ class MobilServices implements MobilServicesI
 
     public function createMobilData(array $data)
     {
-        $add_mobil = Kendaraan::create($data);
-        return $add_mobil;
+        $validator = Validator::make($data, [
+            'tahun_keluaran' => 'required|integer',
+            'warna' => 'required|string',
+            'harga' => 'required|integer',
+            'stok' => 'required|integer',
+            'detail.mesin' => 'required',
+            'detail.kapasitas_penumpang' => 'required',
+            'detail.tipe' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            throw new InvalidArgumentException($validator->errors()->first());
+        }
+
+        return $this->create($data);
     }
 
     public function updateMobilData($id)

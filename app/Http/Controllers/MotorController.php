@@ -31,22 +31,23 @@ class MotorController extends Controller
                 'warna' => $request->input('warna'),
                 'harga' => $request->input('harga'),
                 'class' => 'Motor',
+                'stok' => $request->input('stok'),
                 'detail' => [
                     'mesin' => $request->input('mesin'),
                     'tipe_suspensi' => $request->input('tipe_suspensi'),
                     'tipe_transmisi' => $request->input('tipe_transmisi'),
                 ],
             ];
-
             $add_motor = $this->motorServices->createMotorData($data);
-
             BaseResponse::setStatus(201);
-            return BaseResponse::make($add_motor);
         }
         catch (\Exception $E){
             BaseResponse::setStatus(400);
             return BaseResponse::makeError($E->getMessage());
         }
+
+        return BaseResponse::make($add_motor);
+
     }
 
 }
