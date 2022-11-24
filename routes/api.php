@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\MotorController;
+use App\Http\Controllers\MobilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('kendaraan', [KendaraanController::class, 'index']);
 
 Route::post('motor', [MotorController::class, 'store']);
+
+Route::post('mobil', [MobilController::class, 'store']);
+
