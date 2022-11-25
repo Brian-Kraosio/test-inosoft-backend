@@ -31,9 +31,9 @@ class KendaraanRepository implements KendaraanRepositoryI
     }
 
     public function create(array $data)
-    {        $add_kendaraan = Kendaraan::create($data);
+    {
 
-        return $add_kendaraan;
+        return Kendaraan::create($data);
 
     }
 }

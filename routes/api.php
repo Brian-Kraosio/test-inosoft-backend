@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\MotorController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('kendaraan', [KendaraanController::class, 'index']);
 
 Route::get('kendaraan/{id}/stok', [KendaraanController::class, 'getStockById']);
+
+Route::get('kendaraan/{id}/log-jual', [PenjualanController::class, 'logPenjualanKendaaran']);
+
+Route::post('kendaraan/{id}/jual', [PenjualanController::class, 'store']);
 
 Route::post('motor', [MotorController::class, 'store']);
 
