@@ -10,7 +10,7 @@ use App\Repositories\KendaraanRepositoryI;
 class KendaraanRepository implements KendaraanRepositoryI
 {
 
-    public function getAllData()
+    public function getAllData() : object
     {
         return Kendaraan::all();
     }

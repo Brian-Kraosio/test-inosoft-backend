@@ -13,10 +13,9 @@ class MobilServices extends KendaraanRepository implements MobilServicesI
 {
 
 
-
-    public function getAllMobil($class)
+    public function getAllMobil()
     {
-        // TODO: Implement getAllMobil() method.
+        return Kendaraan::where("class", "Mobil")->get();
     }
 
     public function createMobilData(array $data)

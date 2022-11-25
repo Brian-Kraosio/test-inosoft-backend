@@ -22,7 +22,7 @@ class MotorController extends Controller
 
     public function index()
     {
-//        return $this->kendaraanRepo->getAllData();
+        return $this->motorServices->getAllMotor();
     }
 
     public function store(Request $request){

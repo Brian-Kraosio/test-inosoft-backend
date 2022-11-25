@@ -45,6 +45,7 @@ Route::group(['middleware' => ['jwt.verify']], function (){
     Route::controller(KendaraanController::class)->group(function (){
         Route::get('kendaraan', 'index');
         Route::get('kendaraan/{id}/stok', 'getStockById');
+
     });
 
     Route::controller(PenjualanController::class)->group(function (){
@@ -52,11 +53,21 @@ Route::group(['middleware' => ['jwt.verify']], function (){
         Route::get('log-jual', 'index');
         Route::post('kendaraan/{id}/jual', 'store');
     });
+
+    Route::controller(MobilController::class)->group(function (){
+        Route::get('kendaraan/mobil', 'index');
+        Route::post('kendaraan/mobil', 'store');
+    });
+
+    Route::controller(MotorController::class)->group(function (){
+        Route::get('kendaraan/motor', 'index');
+        Route::post('kendaraan/motor', 'store');
+    });
 });
 
 
 
-Route::post('motor', [MotorController::class, 'store']);
 
-Route::post('mobil', [MobilController::class, 'store']);
+
+
 

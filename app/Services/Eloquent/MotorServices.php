@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Validator;
 class MotorServices extends KendaraanRepository implements MotorServicesI
 {
 
-    public function getAllMotor($class)
+    public function getAllMotor()
     {
-        // TODO: Implement getAllMotor() method.
+        return Kendaraan::where("class", "Motor")->get();
+
     }
 
     public function createMotorData(array $data)

@@ -21,7 +21,7 @@ class MobilController extends Controller
 
     public function index()
     {
-
+        return BaseResponse::make($this->mobilServices->getAllMobil());
     }
 
     public function store(Request $request){
