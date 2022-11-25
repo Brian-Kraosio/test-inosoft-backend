@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Kendaraan extends Eloquent
 {
+    Use HasFactory;
+
     protected $connection = 'mongodb';
     protected $collection = 'kendaraans';
 

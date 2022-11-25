@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
@@ -10,7 +11,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Eloquent implements Authenticatable, JWTSubject
 {
-    use AuthenticatableTrait , Notifiable;
+
+    use AuthenticatableTrait , Notifiable, HasFactory;
 
     protected $connection = 'mongodb';
     protected $collection = 'users';

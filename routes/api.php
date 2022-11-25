@@ -49,6 +49,7 @@ Route::group(['middleware' => ['jwt.verify']], function (){
 
     Route::controller(PenjualanController::class)->group(function (){
         Route::get('kendaraan/{id}/log-jual', 'logPenjualanKendaaran');
+        Route::get('log-jual', 'index');
         Route::post('kendaraan/{id}/jual', 'store');
     });
 });

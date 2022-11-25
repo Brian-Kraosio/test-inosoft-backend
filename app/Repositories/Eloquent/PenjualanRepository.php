@@ -31,7 +31,7 @@ class PenjualanRepository implements PenjualanRepositoryI
 
     public function create(array $data)
     {
-        $kendaraan = Kendaraan::find($data["order_kendaraan"]["kendaraan_id"]);
+        $kendaraan = Kendaraan::findorfail($data["order_kendaraan"]["kendaraan_id"]);
 
         $kendaraan->update(['stok' => $kendaraan->stok - $data["order_kendaraan"]["quantity"]]);
 
