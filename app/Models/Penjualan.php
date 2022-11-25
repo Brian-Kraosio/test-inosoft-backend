@@ -7,7 +7,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Penjualan extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'penjualan';
+    protected $collection = 'penjualans';
 
     protected $fillable = [
         'nama_pembeli', 'order_kendaraan', 'kendaraan_id', 'quantity', 'order_date'

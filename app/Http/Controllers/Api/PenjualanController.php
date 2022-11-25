@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Classes\BaseResponse\BaseResponse;
-use App\Models\Penjualan;
+use App\Http\Controllers\Api\Controller;
 use App\Services\Eloquent\PenjualanServices;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

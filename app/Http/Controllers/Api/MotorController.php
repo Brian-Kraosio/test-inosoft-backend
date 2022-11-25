@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Classes\BaseResponse\BaseResponse;
+use App\Http\Controllers\Api\Controller;
 use App\Services\Eloquent\MotorServices;
 use Illuminate\Http\Request;
 

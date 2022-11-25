@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\KendaraanController;
+use App\Http\Controllers\Api\MobilController;
+use App\Http\Controllers\Api\MotorController;
+use App\Http\Controllers\Api\PenjualanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KendaraanController;
-use App\Http\Controllers\MotorController;
-use App\Http\Controllers\MobilController;
-use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +19,41 @@ use App\Http\Controllers\PenjualanController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+//Route::group([
+//
+//    'middleware' => 'api',
+//    'prefix' => 'auth'
+//
+//], function ($router) {
+//
+//    Route::post('login', [AuthController::class, 'login']);
+//    Route::post('logout', [AuthController::class, 'logout']);
+//    Route::post('refresh', [AuthController::class, 'refresh']);
+//    Route::post('me', [AuthController::class, 'login']);
+//
+//});
+
+Route::post('login', [AuthController::class, 'login']);
+
+Route::group(['middleware' => ['jwt.verify']], function (){
+    Route::post('user', [AuthController::class, 'me']);
+
+    Route::controller(KendaraanController::class)->group(function (){
+        Route::get('kendaraan', 'index');
+        Route::get('kendaraan/{id}/stok', 'getStockById');
+    });
+
+    Route::controller(PenjualanController::class)->group(function (){
+        Route::get('kendaraan/{id}/log-jual', 'logPenjualanKendaaran');
+        Route::post('kendaraan/{id}/jual', 'store');
+    });
 });
 
-Route::get('kendaraan', [KendaraanController::class, 'index']);
 
-Route::get('kendaraan/{id}/stok', [KendaraanController::class, 'getStockById']);
-
-Route::get('kendaraan/{id}/log-jual', [PenjualanController::class, 'logPenjualanKendaaran']);
-
-Route::post('kendaraan/{id}/jual', [PenjualanController::class, 'store']);
 
 Route::post('motor', [MotorController::class, 'store']);
 

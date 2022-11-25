@@ -14,7 +14,11 @@ class CreateKendaraansTable extends Migration
     public function up()
     {
         Schema::create('kendaraans', function (Blueprint $table) {
-            $table->id();
+            $table->integer('tahun_keluaran');
+            $table->string('warna');
+            $table->integer('harga');
+            $table->integer('stok');
+            $table->jsonb('detail');
             $table->timestamps();
         });
     }

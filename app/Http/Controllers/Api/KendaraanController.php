@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Classes\BaseResponse\BaseResponse;
-use App\Models\Kendaraan;
+use App\Http\Controllers\Api\Controller;
 use App\Services\Eloquent\KendaraanServices;
-use Illuminate\Http\Request;
 
 class KendaraanController extends Controller
 {
@@ -32,11 +31,8 @@ class KendaraanController extends Controller
             BaseResponse::setStatus(404);
             return BaseResponse::makeError("Not Found");
         }
-        return response()->json([
-            "stok"=> $stok,
-            'success' => true,
-            'status' => 200,
-        ]);
+
+        return BaseResponse::make($stok);
     }
 
 }

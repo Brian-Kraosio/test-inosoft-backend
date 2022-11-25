@@ -12,9 +12,9 @@ class KendaraanServices extends KendaraanRepository implements KendaraanServices
     public function getStockById($id)
     {
 
-        $data = $this->getDataById($id);
+        $stok = $this->getDataById($id);
 
-        return $data['stok'];
+        return ["stok" => $stok['stok']];
 
     }
 }
