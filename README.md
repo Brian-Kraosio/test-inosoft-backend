@@ -24,7 +24,7 @@ The following is the procedure for using the backend program from the inosoft ba
 
 
 ## :arrow_forward: Running Program (try in local)
-###:cd: Install Composer Dependencies
+### :cd: Install Composer Dependencies
 - Buka file laravel dan install semua composer yang tersedia 
   - Ketik code tersebut di terminal yang tersedia:
 ```text
@@ -33,13 +33,13 @@ composer install
   - Apabila terdapat konflik mengenai library jenssegers/mongodb, maka anda dapat melihat detailnya [disini](https://github.com/jenssegers/laravel-mongodb)
 
 
-###:cd: Install NPM Dependencies
+### :cd: Install NPM Dependencies
 - Ketik code tersebut di terminal yang tersedia:
 ```text
 npm install
 ```
 
-###:computer: .env setting
+### :computer: .env setting
 - Copy file `env.example` kedalam project dan ganti menjadi file `.env`
 - Didalam file `.env` ganti 
 ```dotenv
@@ -67,14 +67,14 @@ php artisan jwt:secret
 ```
 
 
-###:bookmark_tabs: Database Migration dan Seed
+### :bookmark_tabs: Database Migration dan Seed
 - Jalankan kode berikut di terminal yang ada untuk melakukan migration dan seeder kedalam database mongodb yang telah terhubung:
 ```text
 php artisan migrate:fresh --seed
 ```
 
 
-###:desktop_computer: Menjalankan Server
+### :desktop_computer: Menjalankan Server
 Menjalankan server diperlukan untuk percobaan ataupun testing dan menjalankan fitur dari API
 
 - Jalankan kode berikut untuk menjalankan laravel server:
@@ -82,17 +82,17 @@ Menjalankan server diperlukan untuk percobaan ataupun testing dan menjalankan fi
 php artisan serve
 ```
 
-###:test_tube: Running Test
+### :test_tube: Running Test
 - Jalankan kode berikut di terminal yang tersedia untuk melakukan test. Pastikan test folder dan file tersedia di `\test` :
 ```text
 php artisan test
 ```
 
 
-###:open_book: API Postman Documentation
+### :open_book: API Postman Documentation
 Untuk dokumentasi dapat dilihat [disini](https://documenter.getpostman.com/view/10737931/2s8YstTD4T)
 
 
-###:adult:Biodata Job Applicant
+### :adult: Biodata Job Applicant
 ####Brian Sayudha | briansayudha@gmail.com
 
