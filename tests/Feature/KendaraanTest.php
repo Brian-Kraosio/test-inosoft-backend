@@ -27,15 +27,16 @@ class KendaraanTest extends TestCase
             'success',
             'data' => [
                 '*' => [
-                    '_id',
                     'tahun_keluaran',
                     'warna',
                     'harga',
-                    'class',
+//                    'class',
                     'detail',
                     'stok',
                     'updated_at',
                     'created_at',
+                    '_id',
+
                 ]
             ]
         ]);

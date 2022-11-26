@@ -55,8 +55,6 @@ class PenjualanTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertJsonStructure([
-            'code',
-            'success',
             'data' => [
                 '*' => [
                     'nama_pembeli',

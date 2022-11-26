@@ -8,6 +8,7 @@ use App\Services\Eloquent\KendaraanServices;
 
 class KendaraanController extends Controller
 {
+
     private $kendaraanService;
 
     public function __construct()

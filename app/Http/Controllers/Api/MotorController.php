@@ -22,7 +22,7 @@ class MotorController extends Controller
 
     public function index()
     {
-        return $this->motorServices->getAllMotor();
+        return BaseResponse::make($this->motorServices->getAllMotor());
     }
 
     public function store(Request $request){
