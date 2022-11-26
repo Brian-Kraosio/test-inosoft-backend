@@ -68,6 +68,10 @@ php artisan jwt:secret
 
 
 ### :bookmark_tabs: Database Migration dan Seed
+Untuk menentukan nama database dapat dilakukan di `.env` bagian `MONGO_DB_DATABASE=`. Nama Database ketika melakukan migration akan secara auto terbuat sesuai dengan isian dari bagian tersebut.
+
+Untuk menjalankan migrate bisa diikuti cara berikut:
+
 - Jalankan kode berikut di terminal yang ada untuk melakukan migration dan seeder kedalam database mongodb yang telah terhubung:
 ```text
 php artisan migrate:fresh --seed
