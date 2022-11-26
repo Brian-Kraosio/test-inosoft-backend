@@ -7,18 +7,19 @@ use App\Repositories\Eloquent\KendaraanRepository;
 use App\Services\MobilServicesI;
 use GuzzleHttp\Exception\InvalidArgumentException;
 use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Expr\Cast\Object_;
 
 
 class MobilServices extends KendaraanRepository implements MobilServicesI
 {
 
 
-    public function getAllMobil()
+    public function getAllMobil() : Object
     {
         return Kendaraan::where("class", "Mobil")->get();
     }
 
-    public function createMobilData(array $data)
+    public function createMobilData(array $data) : Kendaraan
     {
         $validator = Validator::make($data, [
             'tahun_keluaran' => 'required|integer',

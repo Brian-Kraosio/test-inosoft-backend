@@ -15,7 +15,7 @@ class KendaraanRepository implements KendaraanRepositoryI
         return Kendaraan::all();
     }
 
-    public function getDataById($id)
+    public function getDataById($id) : Object
     {
         return Kendaraan::findOrFail($id);
     }
@@ -30,7 +30,7 @@ class KendaraanRepository implements KendaraanRepositoryI
         // TODO: Implement deleteById() method.
     }
 
-    public function create(array $data)
+    public function create(array $data) : Kendaraan
     {
 
         return Kendaraan::create($data);

@@ -9,12 +9,12 @@ use App\Repositories\PenjualanRepositoryI;
 class PenjualanRepository implements PenjualanRepositoryI
 {
 
-    public function getAllData()
+    public function getAllData() : Object
     {
         return Penjualan::all();
     }
 
-    public function getDataById($id)
+    public function getDataById($id) : Object
     {
         return Penjualan::findOrFail($id);
     }
@@ -29,7 +29,7 @@ class PenjualanRepository implements PenjualanRepositoryI
         // TODO: Implement deleteById() method.
     }
 
-    public function create(array $data)
+    public function create(array $data) : Penjualan
     {
         $kendaraan = Kendaraan::findorfail($data["order_kendaraan"]["kendaraan_id"]);
 
@@ -38,7 +38,7 @@ class PenjualanRepository implements PenjualanRepositoryI
         return Penjualan::create($data);
     }
 
-    public function getLogByIdKendaraan($id)
+    public function getLogByIdKendaraan($id) : Object
     {
         return Penjualan::where('order_kendaraan.kendaraan_id', $id)->get();
     }

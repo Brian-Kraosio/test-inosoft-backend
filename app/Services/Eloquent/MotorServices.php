@@ -13,13 +13,12 @@ use Illuminate\Support\Facades\Validator;
 class MotorServices extends KendaraanRepository implements MotorServicesI
 {
 
-    public function getAllMotor()
+    public function getAllMotor() : Object
     {
         return Kendaraan::where("class", "Motor")->get();
-
     }
 
-    public function createMotorData(array $data)
+    public function createMotorData(array $data) : Kendaraan
     {
         $validator = Validator::make($data, [
             'tahun_keluaran' => 'required|integer',

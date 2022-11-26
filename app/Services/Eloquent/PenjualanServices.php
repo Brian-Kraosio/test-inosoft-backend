@@ -2,6 +2,7 @@
 
 namespace App\Services\Eloquent;
 
+use App\Models\Penjualan;
 use App\Repositories\Eloquent\PenjualanRepository;
 use App\Services\PenjualanServicesI;
 use GuzzleHttp\Exception\InvalidArgumentException;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class PenjualanServices extends PenjualanRepository implements PenjualanServicesI
 {
 
-    public function penjualanKendaraan(array $data)
+    public function penjualanKendaraan(array $data) : Penjualan
     {
         $validator = Validator::make($data, [
             'nama_pembeli' => 'required|string',
@@ -26,7 +27,7 @@ class PenjualanServices extends PenjualanRepository implements PenjualanServices
         return $this->create($data);
     }
 
-    public function logPenjualanKendaraanById($id)
+    public function logPenjualanKendaraanById($id) : Object
     {
         return $this->getLogByIdKendaraan($id);
     }
