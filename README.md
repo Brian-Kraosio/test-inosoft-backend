@@ -1,9 +1,9 @@
-<p align="center"><a href="https://www.linkedin.com/company/inosoftweb/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C560BAQHHO9vnTs50aA/company-logo_200_200/0/1594742456716?e=1677715200&v=beta&t=0L1XUeFWGBLPd6tZbcK5ZHocdA-BRGVNt2WPfyEGZYc" width=50% height=50%></a></p>
+<p align="center"><a href="https://www.linkedin.com/company/inosoftweb/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C560BAQHHO9vnTs50aA/company-logo_200_200/0/1594742456716?e=1677715200&v=beta&t=0L1XUeFWGBLPd6tZbcK5ZHocdA-BRGVNt2WPfyEGZYc" width=200 ></a></p>
 
 
 ## :computer: API Test Inosoft 
 
-The following is the procedure for using the backend program from the inosoft backend test locally:
+Berikut adalah tata cara penggunaan backend laravel secara local:
 
 ##	:link: Architecture Program
 
