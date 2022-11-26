@@ -7,58 +7,92 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## :computer: API Test Inosoft 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The following is the procedure for using the backend program from the inosoft backend test locally:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##	:link: Architecture Program
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Menggunakan [PHP ^7.3 | PHP ^8.0](https://www.php.net/)
+- Menggunakan [Database MongoDb](https://www.mongodb.com/compatibility/mongodb-laravel-intergration) ([MongoDB Compass](https://www.mongodb.com/try/download/community) | [MongoDB Atlas](https://www.mongodb.com/atlas))
+- Menggunakan [Laravel 8](https://laravel.com/docs/8.x)
 
-## Learning Laravel
+## :gear: Prerequisites
+- Clone repo ini
+- Telah memiliki installasi mongodb di dalam php driver maupun device, untuk cara installasi bisa dilihat [disini](https://www.php.net/manual/en/mongodb.installation.php)
+- MongoDB database telah terhubung
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## :arrow_forward: Running Program (try in local)
+###:cd: Install Composer Dependencies
+- Buka file laravel dan install semua composer yang tersedia 
+  - Ketik code tersebut di terminal yang tersedia:
+```text
+composer install
+```
+  - Apabila terdapat konflik mengenai library jenssegers/mongodb, maka anda dapat melihat detailnya [disini](https://github.com/jenssegers/laravel-mongodb)
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+###:cd: Install NPM Dependencies
+- Ketik code tersebut di terminal yang tersedia:
+```text
+npm install
+```
 
-### Premium Partners
+###:computer: .env setting
+- Copy file `env.example` kedalam project dan ganti menjadi file `.env`
+- Didalam file `.env` ganti 
+```dotenv
+DB_CONNECTION=mysql
+```
+menjadi 
+```dotenv
+DB_CONNECTION=mongodb
+``` 
+- Lalu tambahkan setting mongodb sebagai berikut:
+```dotenv
+MONGO_DB_HOST=127.0.0.1 #sesuaikan dengan uri koneksi dari mongodb yang ada
+MONGO_DB_PORT=27017 #sesuaikan dengan uri koneksi dari mongodb yang ada
+MONGO_DB_DATABASE=test-inosoft #sesuaikan dengan database yang akan digunakan
+MONGO_DB_USERNAME=
+MONGO_DB_PASSWORD=
+```
+- Lalu jalankan code berikut di terminal yang ada untuk generate `APP_KEY=`
+```text
+php artisan key=generate
+```
+- dan jalankan kode berikut di terminal yang ada untuk generate `JWT_SECRET=`
+```text
+php artisan jwt:secret
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+###:bookmark_tabs: Database Migration dan Seed
+- Jalankan kode berikut di terminal yang ada untuk melakukan migration dan seeder kedalam database mongodb yang telah terhubung:
+```text
+php artisan migrate:fresh --seed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+###:desktop_computer: Menjalankan Server
+Menjalankan server diperlukan untuk percobaan ataupun testing dan menjalankan fitur dari API
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Jalankan kode berikut untuk menjalankan laravel server:
+```text
+php artisan serve
+```
 
-## Security Vulnerabilities
+###:test_tube: Running Test
+- Jalankan kode berikut di terminal yang tersedia untuk melakukan test. Pastikan test folder dan file tersedia di `\test` :
+```text
+php artisan test
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+###:open_book: API Postman Documentation
+Untuk dokumentasi dapat dilihat [disini](https://documenter.getpostman.com/view/10737931/2s8YstTD4T)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+###:adult:Biodata Job Applicant
+####Brian Sayudha | briansayudha@gmail.com
+
