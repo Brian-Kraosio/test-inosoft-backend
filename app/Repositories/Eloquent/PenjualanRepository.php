@@ -16,6 +16,7 @@ class PenjualanRepository implements PenjualanRepositoryI
 
     public function getDataById($id) : Object
     {
+
         return Penjualan::findOrFail($id);
     }
 
@@ -31,15 +32,12 @@ class PenjualanRepository implements PenjualanRepositoryI
 
     public function create(array $data) : Penjualan
     {
-        $kendaraan = Kendaraan::findorfail($data["order_kendaraan"]["kendaraan_id"]);
-
-        $kendaraan->update(['stok' => $kendaraan->stok - $data["order_kendaraan"]["quantity"]]);
-
         return Penjualan::create($data);
     }
 
     public function getLogByIdKendaraan($id) : Object
     {
+
         return Penjualan::where('order_kendaraan.kendaraan_id', $id)->get();
     }
 }

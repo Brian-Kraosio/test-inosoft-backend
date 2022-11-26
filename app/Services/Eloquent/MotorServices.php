@@ -25,6 +25,7 @@ class MotorServices extends KendaraanRepository implements MotorServicesI
             'warna' => 'required|string',
             'harga' => 'required|integer',
             'stok' => 'required|integer',
+            'class' => '',
             'detail.mesin' => 'required',
             'detail.tipe_suspensi' => 'required',
             'detail.tipe_transmisi' => 'required',

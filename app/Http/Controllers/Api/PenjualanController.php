@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Classes\BaseResponse\BaseResponse;
 use App\Http\Controllers\Api\Controller;
+use App\Http\Resources\PenjualanResource;
 use App\Services\Eloquent\PenjualanServices;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -62,6 +63,7 @@ class PenjualanController extends Controller
     {
         try{
             $logJual = $this->penjualanService->logPenjualanKendaraanById($id);
+
         }
         catch (\Exception $E){
             BaseResponse::setStatus(404);

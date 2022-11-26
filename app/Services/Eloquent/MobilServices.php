@@ -26,6 +26,7 @@ class MobilServices extends KendaraanRepository implements MobilServicesI
             'warna' => 'required|string',
             'harga' => 'required|integer',
             'stok' => 'required|integer',
+            'class' => '',
             'detail.mesin' => 'required',
             'detail.kapasitas_penumpang' => 'required',
             'detail.tipe' => 'required',
