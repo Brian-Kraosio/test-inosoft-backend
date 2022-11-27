@@ -7,7 +7,7 @@ Berikut adalah tata cara penggunaan backend laravel secara local:
 
 ##	:link: Architecture Program
 
-- Menggunakan [PHP ^7.3 | PHP ^8.0](https://www.php.net/)
+- Menggunakan [PHP ^7.3 (Recommended) | PHP ^8.0](https://www.php.net/)
 - Menggunakan [Database MongoDb](https://www.mongodb.com/compatibility/mongodb-laravel-intergration) ([MongoDB Compass](https://www.mongodb.com/try/download/community) | [MongoDB Atlas](https://www.mongodb.com/atlas))
 - Menggunakan [Laravel 8](https://laravel.com/docs/8.x)
 
