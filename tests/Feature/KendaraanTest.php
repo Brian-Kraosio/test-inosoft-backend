@@ -30,13 +30,12 @@ class KendaraanTest extends TestCase
                     'tahun_keluaran',
                     'warna',
                     'harga',
-//                    'class',
+                    'class',
                     'detail',
                     'stok',
                     'updated_at',
                     'created_at',
                     '_id',
-
                 ]
             ]
         ]);

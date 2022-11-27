@@ -82,16 +82,31 @@ class PenjualanTest extends TestCase
             'code',
             'success',
             'data' => [
-                '*' => [
-                    'nama_pembeli',
-                    'order_date',
-                    'order_kendaraan' => [
-                        'kendaraan_id',
-                        'quantity',
-                    ],
+                'penjualan' => [
+                    '*' => [
+                        'nama_pembeli',
+                        'order_date',
+                        'order_kendaraan' => [
+                            'kendaraan_id',
+                            'quantity',
+                        ],
+                        'updated_at',
+                        'created_at',
+                        '_id',
+                    ]
+                ],
+                'total_kendaraan_terjual',
+                "kendaraan" => [
+                    'tahun_keluaran',
+                    'warna',
+                    'harga',
+                    'class',
+                    'detail',
+                    'stok',
                     'updated_at',
                     'created_at',
                     '_id',
+
                 ]
             ]
         ]);
